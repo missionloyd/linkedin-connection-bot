@@ -127,3 +127,13 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# credentials
+*.enc
+*.key
+
+# logs
+*.log
+
+# webdriver
+chromedriver
