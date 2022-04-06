@@ -20,8 +20,6 @@ element_paths = conf['element_paths']
 
 creds = "\n\n*** Created by Missionloyd :) ***\nhttps://github.com/missionloyd\n"
 
-
-# print("\n*** Hello, this is your automatic health checker ***\n\nFor issues/errors, please go to this link:\nhttps://github.com/missionloyd/asu-auto-health-check/issues\n")
 time.sleep(1)
 
 #credentials to LinkedIn
@@ -33,7 +31,7 @@ credential = {
 #ask user for credentials
 def get_credential():
     print("Please fill in your credentials\n(Your info will encrypted, saved locally and will NOT be shared to ANYONE)\n")
-    username = input("Username: ")
+    username = input("Email: ")
     password = getpass()
     print("\n")
     return username, password
@@ -104,7 +102,7 @@ try:
             sys.exit()
 
 except:
-    print("\nError... Looks Like you do not have FireFox installed!\nOr the URL to the form has changed!")
+    print("\nError... Looks Like you do not have a Web Driver installed!\nOr the URL to the form has changed!")
     sys.exit()
 
 #update user
