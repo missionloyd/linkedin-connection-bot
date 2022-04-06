@@ -1,4 +1,3 @@
-from email import message
 import time, json, sys
 from getpass import getpass
 from os.path import exists
