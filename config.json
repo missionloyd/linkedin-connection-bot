@@ -1,5 +1,8 @@
 {
   "settings":{
+    "max_accounts": 20,
+    "max_wait_time": 8,
+    "send_message":true,
     "save_credentials":true,
     "base_url":"https://www.linkedin.com/feed/?trk=guest_homepage-basic_nav-header-signin"
   },

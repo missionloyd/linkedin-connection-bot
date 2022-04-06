@@ -137,3 +137,7 @@ dmypy.json
 
 # webdriver
 chromedriver
+
+# scraper
+scrapeurls
+scraperurls/*
