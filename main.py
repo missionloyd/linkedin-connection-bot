@@ -161,33 +161,33 @@ for new_connection_url in manifest_list:
         continue
 
     # Extracting the Name, Location
-    # try:
-    checkIfElementExists('text-body-small', 'CLASS_NAME', driver)
-    src = driver.page_source
-    # Now using beautiful soup
-    soup = BeautifulSoup(src, 'lxml')
+    try:
+        checkIfElementExists('text-body-small', 'CLASS_NAME', driver)
+        src = driver.page_source
+        # Now using beautiful soup
+        soup = BeautifulSoup(src, 'lxml')
 
-    intro = soup.find('div', {'class': 'pv-text-details__left-panel'})
+        intro = soup.find('div', {'class': 'pv-text-details__left-panel'})
 
-    # first extract name
-    name_loc = intro.find("h1")
-    name = str(name_loc.get_text().strip()).split(" ")[0].replace(",", "")
+        # first extract name
+        name_loc = intro.find("h1")
+        name = str(name_loc.get_text().strip()).split(" ")[0].replace(",", "")
 
-    works_at_loc = intro.find("div", {'class': 'text-body-medium'})
+        works_at_loc = intro.find("div", {'class': 'text-body-medium'})
 
-    # this gives us the HTML of the tag in which the Company Name is present
-    # Extracting the Company Name
-    works_at = works_at_loc.get_text().strip()
+        # this gives us the HTML of the tag in which the Company Name is present
+        # Extracting the Company Name
+        works_at = works_at_loc.get_text().strip()
 
-    details = soup.find('div', {'class': 'pb2 pv-text-details__left-panel'})
+        details = soup.find('div', {'class': 'pb2 pv-text-details__left-panel'})
 
-    location_loc = details.find_all("span", {'class': 'text-body-small'})
+        location_loc = details.find_all("span", {'class': 'text-body-small'})
 
-    # Ectracting the Location
-    location = str(location_loc[0].get_text().strip()).split(" ")[0].replace(",", "")
-    # except:
-    #     print("Failed to extract profile info")
-    #     continue
+        # Ectracting the Location
+        location = str(location_loc[0].get_text().strip()).split(" ")[0].replace(",", "")
+    except:
+        print("Failed to extract profile info")
+        continue
 
     print("Attempting to Connect...\n")
 
